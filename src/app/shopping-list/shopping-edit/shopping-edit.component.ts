@@ -50,6 +50,17 @@ editedItem: Ingredient;
     form.reset();
   }
 
+  onClear() {
+    this.slForm.reset();
+    this.editMode = false;
+  }
+
+  onDelete() {
+    this.slService.deleteIngredient(this.editedItemIndex);
+    this.onClear();
+
+
+  }
   ngOnDestroy(){
     this.subscription.unsubscribe();
   }
